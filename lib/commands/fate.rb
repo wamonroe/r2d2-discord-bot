@@ -95,7 +95,7 @@ module Commands
       break if Settings.public_channel?(event.channel)
 
       description = args.join(' ')
-      event << "**#{event.user.nickname} Fate Roll**"
+      event << "**Fate Role for #{event.user.mention}**"
       event << "*#{description}*" unless description.blank?
       event << '```'
       event << FateDice.roll(skill)
