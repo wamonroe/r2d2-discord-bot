@@ -15,6 +15,7 @@ bot = Discordrb::Commands::CommandBot.new(
   prefix:    '!'
 )
 
+bot.include! Commands::Fate
 bot.include! Commands::MostInteresting
 bot.include! Commands::Ping
 bot.include! JoinMessage
