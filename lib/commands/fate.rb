@@ -97,7 +97,9 @@ module Commands
       description = args.join(' ')
       event << "**#{event.user.nickname} Fate Roll**"
       event << "*#{description}*" unless description.blank?
+      event << '```'
       event << FateDice.roll(skill)
+      event << '```'
     end
   end
 end
