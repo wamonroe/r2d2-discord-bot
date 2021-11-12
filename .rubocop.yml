@@ -16,14 +16,14 @@ Layout/HashAlignment:
   EnforcedColonStyle: table
 
 Layout/LineLength:
-  Max: 100
+  Max: 120
 
 Metrics/AbcSize:
   Max: 30
 
 Metrics/BlockLength:
   Max: 50
-  ExcludedMethods:
+  IgnoredMethods:
     - included
     - class_methods
     - run_callbacks
@@ -31,7 +31,7 @@ Metrics/BlockLength:
 Metrics/ClassLength:
   Max: 200
   Exclude:
-    - 'test/**/*_test.rb'
+    - "test/**/*_test.rb"
 
 Metrics/CyclomaticComplexity:
   Max: 12

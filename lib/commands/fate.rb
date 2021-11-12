@@ -32,7 +32,7 @@ class FateDice
     [].tap do |lines|
       lines << display_roll(dice)
       lines << display_skill unless skill.nil?
-      lines << '=' * 21
+      lines << ('=' * 21)
       lines << display_result(dice)
     end.join("\n")
   end

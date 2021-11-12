@@ -15,10 +15,10 @@ a lot of assumptions on usage.
 1. Fork this repository.
 2. Create a new Heroku application and connect it to that repository.
 3. Create Config Vars
-  1. R2D2_CLIENT_ID=_client id of your discord app_
-  2. R2D2_TOKEN=_bot token of your discord app's bot_
-  3. R2D2_MOST_INTERESTING=_comma seperated list of interesting people_
-  4. R2D2_PUBLIC_CHANNELS=_comma seperated list of public channel ids_
+    1. R2D2_CLIENT_ID=_client id of your discord app_
+    2. R2D2_TOKEN=_bot token of your discord app's bot_
+    3. R2D2_MOST_INTERESTING=_comma seperated list of interesting people_
+    4. R2D2_PUBLIC_CHANNELS=_comma seperated list of public channel ids_
 4. Start a worker process (requires the Heroku CLI installed)
 
 ```bash

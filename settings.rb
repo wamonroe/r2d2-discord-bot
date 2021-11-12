@@ -27,7 +27,7 @@ class Settings
     #   [[:susie, "f"], [:bob, "m"], [:janet, "f"]]
     #
     def interesting_people
-      @interesting_people ||= begin
+      @interesting_people ||=
         ENV['R2D2_MOST_INTERESTING'].to_s.split(',').map do |entry|
           name, gender = entry.split(':')
 
@@ -38,7 +38,6 @@ class Settings
           # put together results
           [name, gender]
         end
-      end
     end
   end
 end
