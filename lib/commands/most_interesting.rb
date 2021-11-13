@@ -1,3 +1,5 @@
+require 'faker'
+
 class MostInterestingQuote
   attr_reader :gender
 

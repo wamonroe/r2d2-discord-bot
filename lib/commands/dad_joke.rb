@@ -1,7 +1,7 @@
 require 'faraday'
 require 'faraday_middleware'
 
-class GetChuckFact
+class GetDadJoke
   attr_reader :name
 
   def initialize(name)
@@ -9,7 +9,7 @@ class GetChuckFact
   end
 
   def random
-    response.body['value'] || default_message
+    response.body['joke'] || default_message
   rescue StandardError
     default_message
   end
@@ -19,10 +19,6 @@ class GetChuckFact
   end
 
 private
-
-  def categories
-    'animal,career,celebrity,fashion,food,history,money,movie,music,science,sport,travel'
-  end
 
   def connection
     Faraday.new do |faraday|
@@ -35,22 +31,22 @@ private
   end
 
   def response
-    connection.get("https://api.chucknorris.io/jokes/random?category=#{categories}") do |request|
+    connection.get('https://icanhazdadjoke.com') do |request|
       request.headers['Accept'] = 'application/json'
     end
   end
 end
 
 module Commands
-  module Chuck
+  module DadJoke
     extend Discordrb::Commands::CommandContainer
 
-    command :chuck,
+    command :dadjoke,
             description: 'Sends a random fact dad joke.',
-            usage:       'chuck' do |event|
+            usage:       'dadjoke' do |event|
       break if Settings.public_channel?(event.channel)
 
-      event.send_message GetChuckFact.random(event.user.mention)
+      event.send_message GetDadJoke.random(event.user.mention)
     end
   end
 end

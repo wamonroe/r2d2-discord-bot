@@ -1,8 +1,4 @@
 require 'bundler/setup'
-require 'active_support/all'
-require 'discordrb'
-require 'faker'
-
 require_relative 'settings'
 
 Dir[File.join(__dir__, 'lib/**/*.rb')].each do |file|
@@ -16,6 +12,7 @@ bot = Discordrb::Commands::CommandBot.new(
 )
 
 bot.include! Commands::Chuck
+bot.include! Commands::DadJoke
 bot.include! Commands::Fate
 bot.include! Commands::MostInteresting
 bot.include! Commands::Ping

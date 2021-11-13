@@ -1,3 +1,6 @@
+require 'active_support/all'
+require 'discordrb'
+
 class Settings
   class << self
     # Read the list of public channel ids
