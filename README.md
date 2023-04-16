@@ -10,22 +10,6 @@ generally stored in environmental variables with a lot of assumptions on usage.
 - Random most interesting man (or woman) in the world quotes for select people.
 - A basic ping command to make sure R2D2 is online and working correctly.
 
-## Installation
-
-1. Fork this repository.
-2. Create a new Heroku application and connect it to that repository.
-3. Create Config Vars
-   1. `R2D2_CLIENT_ID`=client id of your discord app
-   2. `R2D2_TOKEN`=bot token of your discord app's bot
-   3. `R2D2_MOST_INTERESTING`=comma seperated list of interesting people
-   4. `R2D2_PUBLIC_CHANNELS`=comma seperated list of public channel ids
-4. Start a worker process (requires the Heroku CLI installed)
-
-```bash
-heroku login
-heroku scale worker=1 --app <app name here>
-```
-
 ## Configuration
 
 ### R2D2_CLIENT_ID
@@ -91,4 +75,19 @@ And start the bot:
 
 ```shell
 bundle exec ruby bot.rb
+```
+
+## Running on Heroku
+
+1. Create a new Heroku application and connect it to the repository.
+2. Create Config Vars
+   1. `R2D2_CLIENT_ID`=client id of your discord app
+   2. `R2D2_TOKEN`=bot token of your discord app's bot
+   3. `R2D2_MOST_INTERESTING`=comma seperated list of interesting people
+   4. `R2D2_PUBLIC_CHANNELS`=comma seperated list of public channel ids
+3. Start a worker process (requires the Heroku CLI installed)
+
+```bash
+heroku login
+heroku scale worker=1 --app <app name here>
 ```
