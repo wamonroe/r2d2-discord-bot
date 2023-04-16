@@ -1,6 +1,11 @@
 require 'active_support/all'
 require 'discordrb'
 
+begin
+  require 'dotenv/load'
+rescue LoadError
+end
+
 class Settings
   class << self
     # Read the list of public channel ids

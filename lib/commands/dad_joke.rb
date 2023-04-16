@@ -42,7 +42,7 @@ module Commands
     extend Discordrb::Commands::CommandContainer
 
     command :dadjoke,
-            description: 'Sends a random fact dad joke.',
+            description: 'Sends a random dad joke.',
             usage:       'dadjoke' do |event|
       break if Settings.public_channel?(event.channel)
 

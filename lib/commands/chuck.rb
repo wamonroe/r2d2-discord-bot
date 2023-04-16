@@ -46,7 +46,7 @@ module Commands
     extend Discordrb::Commands::CommandContainer
 
     command :chuck,
-            description: 'Sends a random fact dad joke.',
+            description: 'Sends a random fact Chuck Norris fact.',
             usage:       'chuck' do |event|
       break if Settings.public_channel?(event.channel)
 
